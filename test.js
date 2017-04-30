@@ -19,7 +19,39 @@ controller.on('facebook_optin', function(bot, message) {
     bot.reply(message, 'Welcome to my app!');
 });
 
-controller.hears('message_received', function(bot, message) {
+controller.on('message_received', function(bot, message) {
+    console.log("Message recieved: " + message);
+
+    bot.reply(message, {"attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do?",
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"Selfie",
+            "payload":"SELFIE_ACTION"
+          },
+          {
+            "type":"postback",
+            "title":"Eat",
+            "payload":"EAT_ACTION"
+          },
+          {
+            "type":"postback",
+            "title":"Event",
+            "payload":"EVENT_ACTION"
+          }
+        ]
+      }
+    }});
+
+    //Todo
+});
+
+
+/*controller.hears('message_received', function(bot, message) {
     console.log("msg:" + message);
     bot.reply(message, 'Hey there.');
 });
@@ -32,4 +64,4 @@ controller.hears(['cookies'], 'message_received', function(bot, message) {
             convo.next();
         });
     });
-});
+});*/
