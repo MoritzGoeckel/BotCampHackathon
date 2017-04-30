@@ -1,25 +1,25 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+//var express = require('express');
+//var bodyParser = require('body-parser');
 
 var Botkit = require('botkit');
 
 var controller = Botkit.facebookbot({
     debug: true,
     receive_via_postback: true,
-    verify_token: "vienna_bot",
-    access_token: "EAADSUpZCVCL4BAIJZBqi1oIVsgA2QTYDsUNQiqERuZACo5kZCYG0HZAKNB6Ty6MeXZAKZBa8RWQEZCJZC2XrZBhNrrdWY4HFt4QZCDtwmkG6YqulZBWqNetvUqyKjL34ZCheco7ckONfp0BUrDH4vF7UpZAmb5DkWsyP28f6zBmJZCSi29GiwZDZD" //231252310689982
+    verify_token: "minutus_test",
+    access_token: "EAALysYKSAZAgBABJEhqxW7etnSMoNm26BBNauDcAyN6wqUkdytuTE1lbUclUpGdu7pbIEH2XZCHUbzdOf2hGJVWAxwZBMcNmV0PQqXBb6KOiYBZC5ORD19wBOutFjT9bDLIxbmOBZBCLrAu1ugyKeSP4YMeT20OfI1zzZBCVkE1QZDZD" //231252310689982
 });
 
-var webserver = express();
-webserver.use(bodyParser.json());
-webserver.use(bodyParser.urlencoded({ extended: true }));
+//var webserver = express();
+//webserver.use(bodyParser.json());
+//webserver.use(bodyParser.urlencoded({ extended: true }));
 
-webserver.use(express.static('public'));
-webserver.listen(63884, null, function() {
-    console.log('Express webserver configured and listening at http://localhost:' + 63884);
-});
+//webserver.use(express.static('public'));
+/*webserver.listen(63884, null, function() {
+    console.log('Express webserver configured and listening at:' + 63884);
+});*/
 
-controller.webserver = webserver;
+///controller.webserver = webserver;
 
 console.log("Running");
 
