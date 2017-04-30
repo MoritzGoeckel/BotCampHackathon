@@ -19,6 +19,11 @@ controller.on('facebook_optin', function(bot, message) {
     bot.reply(message, 'Welcome to my app!');
 });
 
+controller.on("facebook_postback", function(bot, message){
+    console.log("yo!");
+    console.log(message.payload);
+});
+
 controller.on('message_received', function(bot, message) {
     console.log("Message recieved: " + message);
 
