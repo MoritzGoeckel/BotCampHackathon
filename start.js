@@ -14,7 +14,7 @@ var webserver = express();
 webserver.use(bodyParser.json());
 webserver.use(bodyParser.urlencoded({ extended: true }));
 
-//webserver.use(express.static('public'));
+webserver.use(express.static('public'));
 webserver.listen(3000, null, function() {
     console.log('Express webserver configured and listening at http://localhost:' + 3000);
 });
@@ -53,3 +53,5 @@ controller.on('message_received', function(bot, message) {
 
     //Todo
 });
+
+//https://serpens.uberspace.de:3000/
